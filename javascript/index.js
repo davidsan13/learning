@@ -1,8 +1,15 @@
-function Person(name) {
-    this.name = name
-    this.talk = () => {
-        return 'Hello I am ${this.name}'
-    }
+function SuperElement(type, content) {
+    this.el = document.createElement(type);
+    this.el.innerText = content
+    document.body.append(this.el)
+    this.el.addEventListener('click', () => {
+        console.log(this.el)
+    })
 }
 
-const david = new Person('David')
+const array = ['a', 'b', 'c']
+
+const myElement = array.map(item => {
+    return new SuperElement('p', item)
+})
+const h1 = new SuperElement('h1', 'Hello')

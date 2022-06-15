@@ -1,0 +1,132 @@
+HTML CSS BabelResult Skip Results Iframe
+EDIT ON
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #FAF3DD;
+  padding: 2em;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+}
+
+.tabs {
+  position: relative;
+}
+.tabs:not(.--jsfied) {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tabs .--hidden {
+  display: none;
+}
+.tabs a,
+.tabs button {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: 1em;
+  line-height: 1.2;
+  text-align: center;
+  color: #FAF3DD;
+  background-color: transparent;
+}
+.tabs .-primary {
+  display: flex;
+}
+.tabs .-primary > li {
+  flex-grow: 1;
+  background-color: #D51E49;
+}
+.tabs .-primary > li + li {
+  border-left: 1px solid #b61a3e;
+}
+.tabs .-primary > li > a,
+.tabs .-primary > li > button {
+  white-space: nowrap;
+  padding: 1em 0.6em;
+  box-shadow: inset 0 -0.2em 0 #b61a3e;
+}
+.tabs .-primary > li > a:hover,
+.tabs .-primary > li > button:hover {
+  background-color: #b61a3e;
+}
+.tabs .-primary > li > a:active,
+.tabs .-primary > li > button:active {
+  background-color: #961534;
+}
+.tabs .-primary .-more {
+  background-color: #b61a3e;
+}
+.tabs .-primary .-more > button span {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.tabs.--show-secondary .-primary .-more > button span {
+  transform: rotate(180deg);
+}
+.tabs .-secondary {
+  max-width: 100%;
+  min-width: 10em;
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.3);
+  -webkit-animation: nav-secondary 0.2s;
+          animation: nav-secondary 0.2s;
+}
+.tabs .-secondary li {
+  border-top: 1px solid #D51E49;
+  background-color: #b61a3e;
+}
+.tabs .-secondary a,
+.tabs .-secondary button {
+  padding: 0.6em;
+}
+.tabs .-secondary a:hover,
+.tabs .-secondary button:hover {
+  background-color: #961534;
+}
+.tabs .-secondary a:active,
+.tabs .-secondary button:active {
+  background-color: #D51E49;
+}
+.tabs.--show-secondary .-secondary {
+  display: block;
+}
+
+@-webkit-keyframes nav-secondary {
+  0% {
+    opacity: 0;
+    transform: translateY(-1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-secondary {
+  0% {
+    opacity: 0;
+    transform: translateY(-1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

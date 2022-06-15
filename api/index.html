@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <img src="#">
+  <input type="text">
+  <button class="gif">New Gif</button>
+  
+  <script>
+    const img = document.querySelector('img');
+    const btn = document.querySelector('.gif');
+    async function getGif(keyword) { 
+      const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=xEcdtJk3bFG609sS16aRKnxy8sTSNapE&s= ${keyword}`, {mode: 'cors'});
+      const gifData = await response.json()
+      img.src = gifData.data.images.original.url;
+    };
+    getGif('dog');
+      btn.addEventListener('click', () => {
+        const input = document.querySelector('input').value;
+        getGif(input)
+      })
+  </script>
+</body>
+</html>

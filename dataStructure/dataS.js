@@ -37,13 +37,7 @@ const minHeap = () => {
   }
   function swap() {
     currentIndex = size - 1
-    // console.log(currentIndex)
-    // console.log(this.items[currentIndex]) 
-    // console.log(this.items[parentIndex])
     parentIndex = Math.floor(currentIndex / 2)
-    console.log(parentIndex)
-    console.log(currentIndex)
-    console.log(items[currentIndex])
     if(parentIndex === 0) {return}
     while(items[currentIndex] < items[parentIndex]){
       if (items[currentIndex] < items[parentIndex]) {
@@ -54,6 +48,14 @@ const minHeap = () => {
     }
   }
 
+  function sort() {
+    let result = new Array();
+    while (minHeap.length > 1) {
+      result.push(this.remove());
+    };
+
+    return result;
+  }
   
   return {items, insert, size, remove}
 }
@@ -72,6 +74,7 @@ submit.addEventListener('click', (e) => {
   
   const input = document.getElementById("min").value;
   b.insert(input)
+  b.items.forEach(item => console.log(item))
   console.log(b.items)
 })
 
@@ -80,3 +83,5 @@ remove.addEventListener('click', (e) => {
   b.remove()
   console.log(b.items)
 })
+
+const body = document.querySelector('body');

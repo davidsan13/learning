@@ -22,7 +22,6 @@ class bst {
     };
 
     insertNode(node, newNode) {
-      console.log(node.value)
       if (newNode.value < node.value) {
         if (node.left === null)
           node.left = newNode;
@@ -39,6 +38,17 @@ class bst {
           this.insertNode(node.right, newNode);
       }
     };
+
+    search(root, key){
+      if(root == null || root.value == key)
+        return root;
+
+      if(root.value > key){
+        return(root.right, key)
+      }else {
+        return(root.left, key)
+      }
+    };
   }
 // }
 
@@ -48,3 +58,5 @@ p1.insert(4)
 p1.insert(3)
 p1.insert(8)
 console.log(p1)
+
+console.log(p1.search(4, 8));

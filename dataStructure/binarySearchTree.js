@@ -78,6 +78,31 @@ class bst {
       root.height = Math.max(leftHeight, rightHeight) + 1;
       return Math.max(leftHeight, rightHeight) + 1
     };
+
+    traversalLO(root) {
+      if(root == null) return
+      let queue = [];
+      queue.push(root)
+    
+      while(queue.length > 0) {
+        let current = queue.shift()
+        if(current.left != null) {
+          queue.push(current.left)
+        }
+        if(current.right != null) {
+          queue.push(current.right)
+        }
+      }
+    };
+
+    preorder(root) {
+      if(root == null) return;
+      
+      this.preorder(root.left);
+      console.log(root.value)
+      this.preorder(root.right);
+    }
+
   }
 // }
 
@@ -88,11 +113,12 @@ p1.insert(3)
 p1.insert(8)
 p1.insert(6)
 p1.insert(7)
-// p1.insert(10)
+p1.insert(10)
 // p1.insert(15)
 // p1.insert(20)
 let root = p1.getRootNode()
 let root2 = p1.search(root, 8)
-console.log(p1.findHeight(root))
+// console.log(p1.findHeight(root))
 console.log(root)
+p1.preorder(root);
 
